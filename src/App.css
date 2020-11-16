@@ -1,0 +1,9 @@
+@font-face{
+    font-family: Inter;
+    src: url('../src/components/font/Inter-Regular.ttf');
+}
+.App {
+    max-width: 3840px;
+    margin: 0;
+    font-family: Inter;
+}

@@ -1,0 +1,25 @@
+.correct {
+    fill: #E6FAEA;
+    stroke:#47D867;
+}
+.incorrect {
+    fill: #FDEEED;
+    stroke:#EC6259;    
+}
+.options[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+}
+.text_5{
+    fill: #000 !important;
+}
+.text_6{
+    color: #111564 !important;
+}
+.current{
+    stroke: #FF8B37;
+}
+.waisted{
+    pointer-events: none;
+    opacity: 0.5;
+}
