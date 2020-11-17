@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 class Test extends Component {
   render() {
+	  let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     return (
       <div className="second_content">
         <div className="background"></div>
