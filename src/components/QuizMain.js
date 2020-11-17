@@ -8,6 +8,7 @@ import cross from './img/cross.svg';
 import picture from './img/picture.svg';
 import { Link } from 'react-router-dom';
 
+
 export default class Quiz extends Component {
     state = require('./QuizMain.json');
 
@@ -44,6 +45,8 @@ export default class Quiz extends Component {
 
     render() {
         let { quiestions, answers, correctAnswer, clickedAnswer, step, money, moneys } = this.state;
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
         return (
             <div className="second_content">
                 <label className="link" htmlFor="cb" id="menu">
@@ -89,3 +92,5 @@ export default class Quiz extends Component {
         );
     }
 }
+
+
