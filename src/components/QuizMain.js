@@ -45,8 +45,6 @@ export default class Quiz extends Component {
 
     render() {
         let { quiestions, answers, correctAnswer, clickedAnswer, step, money, moneys } = this.state;
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
         return (
             <div>
                 { step <= Object.keys(quiestions).length ?
