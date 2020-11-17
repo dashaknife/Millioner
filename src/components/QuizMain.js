@@ -8,6 +8,7 @@ import cross from './img/cross.svg';
 import picture from './img/picture.svg';
 import { Link } from 'react-router-dom';
 
+
 export default class Quiz extends Component {
     state = require('./QuizMain.json');
 
@@ -44,35 +45,38 @@ export default class Quiz extends Component {
 
     render() {
         let { quiestions, answers, correctAnswer, clickedAnswer, step, money, moneys } = this.state;
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
         return (
-            <div className="second_content">
-                <label className="link" htmlFor="cb" id="menu">
-                    <img src={menu} alt="" className="menu"></img>
-                    <img src={cross} alt="" className="cross"></img>
-                </label>
-                <input type="checkbox" id="cb"></input>
-
-                {step <= Object.keys(quiestions).length ?
+            <div>
+                { step <= Object.keys(quiestions).length ?
                     (<>
-                        <div className="second_content_1">
-                            <div className="second_content_3">
-                                <h3><Question question={quiestions[step]} /></h3>
+                        <div className="second_content">
+                            <label className="link" htmlFor="cb" id="menu">
+                                <img src={menu} alt="" className="menu"></img>
+                                <img src={cross} alt="" className="cross"></img>
+                            </label>
+                            <input type="checkbox" id="cb"></input>
+                            <div className="second_content_1">
+                                <div className="second_content_3">
+                                    <h3><Question question={quiestions[step]} /></h3>
+                                </div>
+                                <div className="second_content_3">
+                                    <Answer
+                                        answer={answers[step]}
+                                        step={step}
+                                        checkAnswer={this.checkAnswer}
+                                        correctAnswer={correctAnswer}
+                                        clickedAnswer={clickedAnswer}
+                                    />
+                                </div>
                             </div>
-                            <div className="second_content_3">
-                                <Answer
-                                    answer={answers[step]}
+                            <div id="second_content_2">
+                                <Money
+                                    money={moneys}
                                     step={step}
-                                    checkAnswer={this.checkAnswer}
-                                    correctAnswer={correctAnswer}
-                                    clickedAnswer={clickedAnswer}
                                 />
                             </div>
-                        </div>
-                        <div id="second_content_2">
-                            <Money
-                                money={moneys}
-                                step={step}
-                            />
                         </div>
                     </>) : (
                         <div className="first_content">
